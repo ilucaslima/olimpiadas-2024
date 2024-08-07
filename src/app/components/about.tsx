@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const About = () => {
   return (
-    <section id="about" className="py-24 grid grid-cols-1 md:grid-cols-2 items-center">
+    <section id="about" className="grid pb-10 grid-cols-1 md:grid-cols-2 items-center">
         <Image className="ml-auto" src={Sport} alt="" width={500} />
         <div className="max-w-[500px]">
           <p className="text-lg">

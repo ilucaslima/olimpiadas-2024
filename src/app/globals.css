@@ -48,18 +48,3 @@ b {
     transform: translateY(15px);
   }
 }
-
-.square {
-  width: 600px;
-  height: 600px;
-  background-color: #04062580;
-  border-radius: 100%;
-  filter: blur(70px);
-  position: absolute;
-  z-index: -1;
-  position: absolute;
-
-  @media (max-width: 768px) {
-    display: none;
-  }
-}

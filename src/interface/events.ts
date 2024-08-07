@@ -1,4 +1,12 @@
 export interface IEvents {
+  data: IEvent[],
+  meta: {
+    current_page: number,
+    last_page: number,
+  }
+}
+
+export interface IEvent {
   id: number
   day: string
   discipline_name: string

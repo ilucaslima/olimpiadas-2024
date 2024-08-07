@@ -14,7 +14,7 @@ interface ICountriesProps {
 
 const Countries = ({countries}: ICountriesProps) => {
   return (
-    <section id="countries" className="my-28 m-auto flex flex-col items-center">
+    <section id="countries" className="mt-24 m-auto flex flex-col items-center">
         <h1 className="text-4xl text-center font-bold max-w-[450px]">
           Equipes <b> que participaram das</b> olimpíadas.
         </h1>
@@ -22,7 +22,6 @@ const Countries = ({countries}: ICountriesProps) => {
           className="container testimonials__container"
           modules={[Pagination]}
           spaceBetween={16}
-          slidesPerView={1}
           navigation
           pagination={{ clickable: true }}
           scrollbar={{ draggable: true }}
@@ -42,7 +41,7 @@ const Countries = ({countries}: ICountriesProps) => {
                     <ul className="flex justify-between mt-2 text-sm">
                       <li>Ouro: {item.gold_medals}</li>
                       <li>Prata: {item.silver_medals}</li>
-                      <li>Ouro: {item.bronze_medals}</li>
+                      <li>Bronze: {item.bronze_medals}</li>
                     </ul>
                   </div>
                   <p className="flex items-center gap-2 text-xs bg-card_red py-1.5 px-4 rounded-b-md">

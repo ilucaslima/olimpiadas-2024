@@ -7,12 +7,12 @@ import { SPORTS_MAIN } from "@/utils/data/sports-main";
 
 interface IDisciplinesProps {
   disciplines: IDiscipline[];
-  selected: String;
-  handleSelection: (id: String, name: String) => void;
+  selected: {symbol: string, name: string};
+  handleSelection: (symbol: string, name: string, position: number) => void;
+  setPositionMatches: (state: number) => void;
 }
 
-const Disciplines = ({ disciplines, selected, handleSelection }: IDisciplinesProps) => {
-  
+const Disciplines = ({ disciplines, selected, handleSelection, setPositionMatches }: IDisciplinesProps) => {
   if (!disciplines) {
     return null;
   }
@@ -28,15 +28,16 @@ const Disciplines = ({ disciplines, selected, handleSelection }: IDisciplinesPro
           const name = item.name as string;
           const id = item.id as string;
           const image = item.pictogram_url_dark as string;
+
           return (
             <button 
               key={id} 
-              className={`bg-card_red py-6 px-4 cursor-pointer hover:opacity-90 ${item.name === selected && 'opacity-85'}`}
-              onClick={() => handleSelection(id, name)}
+              className={`bg-card_red py-6 px-4 cursor-pointer hover:opacity-90 ${item.name === selected.name && 'opacity-85'}`}
+              onClick={() => {handleSelection(id, name, 1), setPositionMatches(1)}}
               >
               <div className="flex items-center gap-2">
                 <Image src={image} alt="" width={28} height={28} />
-                <h3>{sports[name]}</h3>
+                <h3 className="hidden md:block">{sports[name]}</h3>
               </div>
             </button>
           );
